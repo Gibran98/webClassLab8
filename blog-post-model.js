@@ -58,3 +58,5 @@ let BlogPostList = {
 	}
 
 }
+
+module.exports = {BlogPostList};
