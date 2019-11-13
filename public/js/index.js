@@ -115,39 +115,11 @@ function updatePost(idU, title2, author2, content2, date) {
 		contentType: 'application/json',
 		success: function(responseJSON) {
 			$("#uPost").text("");
-			updateObjectPost(responseJSON);
+			$(listPosts);
 		},
 		error: function(err) {
 			$("#uPost").text(err.statusText);
 		}
-	});
-}
-
-function updateObjectPost(newPost) {
-	console.log(newPost);	
-	$.ajax({
-		url: "/blog-posts",
-		//data : OBJECT WITH PARAMETERS
-		method: 'GET',
-		dataType: 'json', //TYPE OF DATA TO BE RECIEVED
-		//ContentType: TYPE OF DATA TO BE SENT TO THE API
-		success: function(responseJSON){
-					console.log(responseJSON);
-
-					$("#blogPosts").empty();
-
-					for (let post of responseJSON) {
-						if (post.id == newPost.id)
-							$("#blogPosts").append("<div class='post'><h3>" + newPost.title + "</h3><h6>By: " + newPost.author + ", " + newPost.publishDate + "</h6><p>" + newPost.content + "</p><p>ID: " + newPost.id + "</p></div>");
-						else
-							$("#blogPosts").append("<div class='post'><h3>" + post.title + "</h3><h6>By: " + post.author + ", " + post.publishDate + "</h6><p>" + post.content + "</p><p>ID: " + post.id + "</p></div>");
-					}
-
-				},
-		error: function(err){
-					console.log(err);
-					//$("#dogImages").html(`<li>Something went wrong. Try again later</li>`);
-				}
 	});
 }
 
