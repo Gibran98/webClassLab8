@@ -13,30 +13,6 @@ mongoose.Promise = global.Promise;
 app.use(express.static('public'));
 app.use(morgan("dev"));
 
-let blogPosts = [
-	{
-		id: uuid.v4(),
-		title: "first post",
-		content: "this is the first one",
-		author: "me",
-		publishDate: "23/10/2019"
-	},
-	{
-		id: uuid.v4(),
-		title: "second post",
-		content: "this is the second one",
-		author: "juan",
-		publishDate: "23/10/2019"
-	},
-	{
-		id: uuid.v4(),
-		title: "third post",
-		content: "this is the third one",
-		author: "pedro",
-		publishDate: "23/10/2019"
-	}
-];
-
 app.get("/blog-posts", (req, res, next) =>{
 	BlogPostList.getAll()
 		.then( blogPosts => {
