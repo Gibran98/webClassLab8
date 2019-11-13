@@ -1,0 +1,14 @@
+#sPost, #dPost, #uPost {
+	color: red;
+	font-weight: bold;
+}
+
+input {
+	margin: 5px 5px 5px 5px;
+}
+
+.post {
+	border: solid 2px gray;
+	margin: 10px 10px 10px 0;
+	padding-left: 10px;
+}
