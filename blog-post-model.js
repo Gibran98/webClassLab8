@@ -4,6 +4,7 @@ mongoose.Promise = global.Promise;
 let blogPostSchema = mongoose.Schema({
 	id : {type: String},
 	title: {type: String},
+	author: {type: String},
 	content: {type: String},
 	publishDate: {type: Date}
 });
