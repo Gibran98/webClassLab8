@@ -22,7 +22,7 @@ let BlogPostList = {
 			})
 	},
 	getById : function(pId) {
-		return Student.findOne({id : pId})
+		return BlogPost.findOne({id : pId})
 			.then(post => {
 				return post;
 			})
