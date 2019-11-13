@@ -11,7 +11,7 @@ function listPosts() {
 					$("#blogPosts").empty();
 
 					for (let post of responseJSON) {
-						$("#blogPosts").append("<div class='post'><h3>" + post.title + "</h3><h6>By: " + post.author + ", " + post.publishDate + "</h6><p>" + post.content + "</p><p>ID: " + post.id + "</p></div>");
+						$("#blogPosts").append("<div class='post'><h3>" + post.title + "</h3><h6>By: " + post.author + ", " + post.publishDate.substring(0,10) + "</h6><p>" + post.content + "</p><p>ID: " + post.id + "</p></div>");
 					}
 
 				},
